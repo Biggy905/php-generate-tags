@@ -4,7 +4,7 @@
   "description": "Generate tags",
   "keywords": ["Php generate tags"],
   "type": "project",
-  "license": "MIT license",
+  "license": "MIT",
   "support": {
     "issues": "https://github.com/Biggy905/php-generate-tags/issues?state=open"
   },
