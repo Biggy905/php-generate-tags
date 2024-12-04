@@ -1,10 +1,8 @@
 <?php
 
-namespace applications\adminlte\ViewComponent\components;
+namespace GenerateTags;
 
-use applications\adminlte\ViewComponent\builders\interfaces\AdminLteRenderableInterface;
-
-final class TagRenderable implements AdminLteRenderableInterface
+final class TagRenderable
 {
     public Tag $tag;
     public array $attributes = [];

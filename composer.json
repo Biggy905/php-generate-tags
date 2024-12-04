@@ -1,0 +1,25 @@
+{
+  "name": "biggy905/php-generate-tags",
+  "description": "Generate tags",
+  "keywords": ["Php generate tags"],
+  "type": "project",
+  "license": "MIT license",
+  "support": {
+    "issues": "https://github.com/Biggy905/php-generate-tags/issues?state=open"
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.2"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "GenerateTags\\": "GenerateTags"
+    }
+  }
+}

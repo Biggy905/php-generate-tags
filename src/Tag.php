@@ -1,6 +1,6 @@
 <?php
 
-namespace applications\adminlte\ViewComponent\components;
+namespace GenerateTags;
 
 final class Tag
 {
