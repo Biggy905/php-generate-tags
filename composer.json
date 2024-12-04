@@ -7,6 +7,12 @@
   "support": {
     "issues": "https://github.com/Biggy905/php-generate-tags/issues?state=open"
   },
+  "authors": [
+    {
+      "name": "Alexander Bolgov",
+      "email": "alexander-a-bolgov@yandex.ru"
+    }
+  ],
   "minimum-stability": "stable",
   "require": {
     "php": ">=8.2"
