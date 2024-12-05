@@ -114,8 +114,121 @@ Output:
 </ul>
 */
 ```
+### Another usage
+___
+```php
+use GenerateTags\Tag;
+use GenerateTags\TagRenderable;
 
+$tagRenderable = new TagRenderable();
+
+$tagDiv = new Tag('div');
+$tagSpan = new Tag('span');
+$tagH3 = new Tag('h3');
+$tapP = new Tag('p');
+
+$items = [
+    [
+        'product' => 'Product 1',
+        'price' => 3600,    
+    ],
+    [
+        'product' => 'Product 2',
+        'price' => 4200,    
+    ],
+    [
+        'product' => 'Product 3',
+        'price' => 1200,    
+    ],        
+];
+
+$tagRenderableItems = [];
+foreach ($items as $item) {
+    $tagRenderableItems[] = $tagRenderable
+        ->clear()
+        ->addTag($tagDiv)
+        ->addAttributes(
+            [
+                'class' => 'col-3',            
+            ]       
+        )
+        ->addContent(
+            $tagRenderable
+                ->clear()
+                ->addTag($tagH3)
+                ->addAttributes(
+                    [
+                        'class' => 'text-center'
+                    ],                
+                )
+                ->addContent($item['product'])
+                ->render(),
+            $tagRenderable
+                ->clear()
+                ->addTag($tagP)
+                ->addContent($item['price'])
+                ->render(),   
+        )
+        ->render();
+}
+
+$render = $tagRenderable
+    ->clear()
+    ->addTag($tagDiv)
+    ->addAttributes(
+        [
+            'class' => 'container',
+        ]
+    )
+    ->addContent(
+        $tagRenderable
+            ->addTag($tagDiv)
+            ->addAttributes(
+                [
+                    'class' => 'row',
+                ]       
+            )
+            ->addContent(
+                $tagRenderableItems
+            )
+            ->render();
+    );
+    
+echo $render;
+/*
+output:
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <h3 class="text-center">
+                Product 1
+            </h3>
+            <p>
+                3600
+            </p>
+        </div>
+        <div class="col-3">
+            <h3 class="text-center">
+                Product 2
+            </h3>
+            <p>
+                4200
+            </p>
+        </div>
+        <div class="col-3">
+            <h3 class="text-center">
+                Product 3
+            </h3>
+            <p>
+                1200
+            </p>
+        </div>
+    </div>
+</div>
+*/
+
+```
 ### License
 ___
-PHP Generate Tags is open-sourced software licensed under the [MIT license](http://www.opensource.org/licenses/mit-license.php).
+PHP Generate Tags is open-sourced software licensed under the [MIT license](https://mit-license.org/license.txt).
 Copyright © 2024.
